@@ -1,0 +1,234 @@
+/**
+-----------------------------------------------------------------
+폰트 모음집
+------------------------------------------------------------------
+**/
+
+@font-face { font-family: 'Hakgyoansim Byeoljari TTF B'; font-style: normal; font-weight: 400; src: local('Hakgyoansim Byeoljari TTF B'), url('Byeoljari OTF B.ttf') format('truetype'); }
+
+@font-face { font-family: 'Hakgyoansim Byeoljari TTF L'; font-style: normal; font-weight: 400; src: local('Hakgyoansim Byeoljari TTF L'), url('Byeoljari OTF L.ttf') format('truetype'); }
+
+@font-face { font-family: 'IBM Plex Sans KR Regular'; font-style: normal; font-weight: 400; src: local('IBM Plex Sans KR Regular'), url('IBMPlexSansKR-Regular.woff') format('woff'); }
+  
+
+@font-face { font-family: 'IBM Plex Sans KR Thin'; font-style: normal; font-weight: 400; src: local('IBM Plex Sans KR Thin'), url('IBMPlexSansKR-Thin.woff') format('woff'); }
+
+
+  @font-face { font-family: 'IBM Plex Sans KR ExtraLight'; font-style: normal; font-weight: 400; src: local('IBM Plex Sans KR ExtraLight'), url('IBMPlexSansKR-ExtraLight.woff') format('woff'); }
+  
+
+  @font-face { font-family: 'IBM Plex Sans KR Light'; font-style: normal; font-weight: 400; src: local('IBM Plex Sans KR Light'), url('IBMPlexSansKR-Light.woff') format('woff'); }
+  
+
+  @font-face {
+  font-family: 'IBM Plex Sans KR Medium';
+  font-style: normal;
+  font-weight: 400;
+  src: local('IBM Plex Sans KR Medium'), url('IBMPlexSansKR-Medium.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'IBM Plex Sans KR SemiBold';
+  font-style: normal;
+  font-weight: 500;
+  src: local('IBM Plex Sans KR SemiBold'), url('IBMPlexSansKR-SemiBold.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'IBM Plex Sans KR Bold';
+  font-style: normal;
+  font-weight: 600;
+  src: local('IBM Plex Sans KR Bold'), url('IBMPlexSansKR-Bold.woff') format('woff');
+  }
+
+/* =========================================================
+스타일 초기화
+=========================================================== */
+
+body { /* line-height: 1.5; */ letter-spacing: -1px; color: #262626;}
+
+/* h태그들 폰트크기, 두께 설정 */
+h1{font-size: 1em; font-weight: normal; line-height: 1;}
+
+body,h1,h2,h3,h4,h5,h6,p,ul,input,img,textarea,button,span,dl,dt,div,i,a,form{margin: 0; padding: 0; box-sizing: border-box;}
+
+ul{list-style: none;}
+
+a{text-decoration: none; color: #262626;}
+
+input{border: 1px solid #fff;}
+
+button{border: 0px solid; background-color: #fff;}
+
+strong{font-weight: normal;}
+em{font-style: normal;}
+
+img,i{vertical-align: middle;}
+
+/*  ==========================================================
+header 부분
+============================================================= */
+
+#header { position: relative; width: 100%; height: max-content; z-index: 200; }
+#header::after { display: block; position: absolute; height: 0; width: 100%; content: ""; background-color: white; border-top: #BBB5B5 1px solid; transition: .3s ease;}
+#header.on::after { height: 195px; }
+#header .inner { padding: 0 50px; position: relative; height: 100px; background-color: #fff; z-index: 150; }
+#header .inner::after { display: block; content: ""; clear: both; }
+#header .logo{float: left; margin-top: 25px;}
+#header .gnb-wrap { position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: max-content; }
+
+/* gnb 부분 */
+#header #gnb {}
+#header #gnb > li { float: left; text-align: center; width: 154px; position: relative; }
+#header #gnb::after { display: block; content: ""; clear: both; }
+#header #gnb > li > a.dep1 { display: block; font-size: 20px; line-height: 100px; text-align: center; font-family: 'Hakgyoansim Byeoljari TTF B'; }
+#header #gnb > li:hover > a.dep1 { color: #009BE0; }
+#header #gnb > li > ul.dep2 { position: absolute; left: 0; top: 100px; width: 100%; padding-bottom: 83px; border-left: none; font-family: 'IBM Plex Sans KR Medium'; font-size: 16px; opacity: 0; visibility: hidden; transition: .3s ease; }
+#header.on #gnb > li > ul.dep2 {border-left: #BBB5B5 1px solid; opacity: 1; visibility: visible;}
+#header #gnb > li > ul.last { border-right: none; }
+#header.on #gnb > li > ul.last { border-right: #BBB5B5 1px solid; }
+#header #gnb > li > ul.dep2 > li > a:hover{color: #009BE0;}
+#header #gnb > li > ul.dep2 li:nth-child(1) { margin-top: 20px; }
+#header #gnb > li > ul.dep2 > li + li { margin-top: 10px; }
+
+/* util-wrap 부분 */
+#header .util-wrap{ position: absolute; right: 100px; top: 30px;}
+#header .util-wrap .util { width: 368px; display: flex; gap: 24px; justify-content: space-between; align-items: center;}
+#header .util-wrap .util::after { display: inline-block; content: ""; clear: both; }
+#header .util-wrap .util .id {background-color: #fff; line-height: 36px; border: 2px solid #000; border-radius: 20px; font-family: 'IBM Plex Sans KR SemiBold'; box-shadow: 2px 4px rgba(0, 0, 0, 0.5); transition: all 0.5s ease;}
+#header .util-wrap .util .id:hover{background-color: #009BE0;}
+#header .util-wrap .util .id a {display: flex; gap: 23px; align-items: center; color: #262626; transition: all 0.5s ease; white-space: nowrap;}
+#header .util-wrap .util .id a:hover{color: #fff;}
+#header .util-wrap .util .id a .icon_user { background: #EAEAEA url(../images/ico-User.png) no-repeat center center; border-radius: 12px; background-size: 16px 16px; width: 24px; height: 24px; margin-left: 9px; cursor: pointer; }
+#header .util-wrap .util .id a span { margin-right: 25px; font-size: 16px; }
+#header .util-wrap .util .search_wrap { width: 160px; height: 40px; background-color: #F5F5F5; border: 2px solid #000; display: flex; border-radius: 20px; box-shadow: 2px 4px rgba(0, 0, 0, 0.5); }
+#header .util-wrap .util .search_wrap .search {  background-color: #fff; border-radius: 48px; display: flex; width: 130px; border: 1px solid #fff; margin: 8px 15px 8px 15px;}
+#header .util-wrap .util .search_wrap .search input { width: 99px;  border-radius: 20px 0 0 20px; text-align: center; font-family: 'IBM Plex Sans KR Regular'; font-size: 12px; border-right: 1px solid gray;}
+#header .util-wrap .util .search_wrap .search button { background-image: url(../images/ico-search.png); background-repeat: no-repeat; background-position: center center; background-size: 12px 13px; width: 20px; height: 20px; cursor: pointer; border-radius: 0 20px 20px 0;}
+#header .util-wrap .util > .quick-menu {position: relative;}
+#header .util-wrap .util > .quick-menu i {cursor: pointer;}
+#header .util-wrap .util > .quick-menu .quick-list-wrap{position: absolute; top: 85px; right: 0; display: none;}
+#header .util-wrap .util > .quick-menu .quick-list-wrap .quick-list{  display: flex; flex-direction: column; gap: 18px; transition: all 1s ease;}
+#header .util-wrap .util > .quick-menu .quick-list-wrap .quick-list li a{position: relative; display: flex; flex-direction: row-reverse; gap: 43px;}
+#header .util-wrap .util > .quick-menu .quick-list-wrap .quick-list li a .quick-img{text-align: center; background-color: rgba(0, 0, 0, 0); display: inline-block; width: 72px; height: 72px; border-radius: 36px; transition: all 0.3s ease; border: 3px solid #fff; box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);}
+#header .util-wrap .util > .quick-menu .quick-list-wrap .quick-list li a .quick-img:hover{ width: 320px;}
+#header .util-wrap .util > .quick-menu .quick-list-wrap .quick-list li a .quick-img img{ position: absolute; top: 16px; right: 16px;}
+#header .util-wrap .util > .quick-menu .quick-list-wrap .quick-list li a .quick-img .quick-text{display: none; transition: all 0.3s ease; white-space: nowrap; font-family: 'IBM Plex Sans KR Medium'; font-size: 28px; color: #fff; line-height: 32px; margin-top: 17px;}
+#header .util-wrap .util > .quick-menu .quick-list-wrap .quick-list li a .quick-img .quick-text.on{display: inline-block;}
+#header .util-wrap .util > .quick-menu .quick-list-wrap .quick-list li > .quick-close{width: 40px; height: 40px; cursor: pointer; border-radius: 20px; background: #000 url(../images/ico-Close.png) center center; border: none; transition: all 0.3s ease; border: 3px solid #fff;}
+#header .util-wrap .util > .quick-menu .quick-list-wrap .quick-list li > .quick-close:hover{transform: rotate(360deg); background-color: #000;}
+
+/* ==========================================================
+main slide 부분
+=============================================================*/
+
+#main-slide{position: relative;}
+#main-slide .swiper-slide > img{width: 100%;}
+#main-slide .txt-con { position: absolute; left: 50%; bottom: 0; width: 1440px; height: 100%; transform: translateX(-50%); }
+#main-slide .txt-con .txt-wrap { position: absolute; left: 200px; bottom: 230px; display: flex; flex-direction: column; gap: 10px;}
+#main-slide .txt-con .txt-wrap .tit strong { font-family: 'Hakgyoansim Byeoljari TTF B'; font-size: 48px; margin-bottom: 20px; color: #fff; }
+#main-slide .txt-con .txt-wrap .txt {margin-top: 32px;}
+#main-slide .txt-con .txt-wrap .txt em { font-family: 'Hakgyoansim Byeoljari TTF L'; font-size: 32px; color: #fff;}
+
+/* .swiper-pagination-wrap 부분 */
+#main-slide .swiper-pagination-wrap{position: absolute; background-color: #fff; width: 248px; height: 87px; bottom: 0; right: 304px; z-index: 100; text-align: center; border-radius: 20px 20px 0 0;}
+#main-slide .swiper-pagination-wrap .swiper-pagination-text{margin-top: 19px; margin-bottom: 19px; font-size: 20px; font-weight: 600; color: #009BE0;}
+#main-slide .swiper-pagination-wrap .swiper-pagination-text span{color: #1B51A5;}
+#main-slide .swiper-pagination-wrap .swiper-pagination{top: auto; left: 50%; transform: translateX(-50%); width: 188px;} 
+#main-slide .swiper-pagination-wrap .swiper-pagination-progressbar{ background: #8E8E8E; }
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{ background: #000}
+#main-slide .swiper-pagination-wrap .swiper-button-prev { left: 42.5px; top: 35px; color: #1B51A5; }
+#main-slide .swiper-pagination-wrap .swiper-button-prev:after{display: none;}
+#main-slide .swiper-pagination-wrap .swiper-button-next { right: 42.5px; top: 33.7px; color: #1B51A5; }
+#main-slide .swiper-pagination-wrap .swiper-button-next:after{display: none;} 
+
+/* ======================================================
+프로그램 소개 영역
+=======================================================*/
+
+#program-wrap{width: 1517px; margin: 0 auto; margin-top: 91px;}
+.program-wrap h2{display: inline-block; font-family: 'Hakgyoansim Byeoljari TTF B'; font-size: 48px;}
+.program-wrap .more{float: right;}
+.program-wrap .more span{vertical-align: middle; font-family: 'Hakgyoansim Byeoljari TTF B'; font-size: 48px;}
+.program-wrap .more img{vertical-align: middle; margin-left: 17px;  transition: all 1s ease;}
+.program-wrap .more img:hover{transform: rotate(360deg);}
+
+#banner-wrap { display: flex; gap: 70px; margin-top: 62px; }
+#banner-wrap .banner { border: 3px solid black; border-radius: 0 0 20px 20px; position: relative; box-shadow: 20px 20px rgba(30, 30, 30, 0.25);}
+#banner-wrap .banner .banner-link{display: inline-block;}
+#banner-wrap .banner .banner-link .checkin { margin-top: 13px; margin-left: 10px; border: 1px solid #000; width: max-content; font-family: 'IBM Plex Sans KR Bold'; font-size: 24px; border-collapse: collapse;}
+#banner-wrap .banner .banner-link .checkin .black{background-color:#000; color: #fff; display: inline-block; padding: 5px 10px;}
+#banner-wrap .banner .banner-link .checkin .gray{background-color:#A5A5A5; color: #fff; display: inline-block; padding: 5px 10px; border: 1px solid #000; box-sizing: border-box;}
+#banner-wrap .banner .banner-link .checkin .normal{background-color:#fff; color: #000; display: inline-block; padding: 5px 10px;}
+#banner-wrap .banner .banner-link .banner-info{margin-left: 10px; margin-top: 15px; font-family: 'IBM Plex Sans KR SemiBold'; font-size: 28px;}
+#banner-wrap .banner .banner-link .banner-pri{margin-left: 10px; margin-top: 20px; margin-bottom: 30px; font-family: 'IBM Plex Sans KR regular'; font-size: 28px;}
+#banner-wrap .banner .banner-link .banner-pri strong{font-family: 'IBM Plex Sans KR Bold'; font-size: 28px; color: #1B51A5;}
+#banner-wrap .banner .banner-link .program-util{position: absolute; right: 13px; top: 465px;}
+#banner-wrap .banner .banner-link .program-util .like{text-align: center;}
+#banner-wrap .banner .banner-link .program-util .like p{font-family: 'IBM Plex Sans KR SemiBold'; font-size: 16px;}
+#banner-wrap .banner .banner-link .program-util .share{text-align: center;}
+
+/* ===================================================
+section -> 소식알람 부분
+====================================================*/
+
+#alert-wrap{display: flex; justify-content: space-between; width: 1420px; margin: 0 auto; margin-top: 134px; margin-bottom: 233px;}
+.alert .alert-head{display: flex; gap: 125px;}
+.alert .alert-head h2{white-space: nowrap; font-family: 'Hakgyoansim Byeoljari TTF B'; font-size: 48px; float: left;}
+.alert .alert-head .alert-util{display: flex; gap: 11px; align-items: center; float: right; font-family: 'IBM Plex Sans KR SemiBold'; font-size: 20px;}
+.alert .alert-head .alert-util li{border: 2px solid #1B51A5; border-bottom: none; border-radius: 10px 10px 0 0; height: max-content;}
+.alert .alert-head .alert-util li a{margin: 10px 10px 15px 10px; white-space: nowrap; font-size: 20px; display: inline-block;  color: #7D7D7D;}
+.alert .alert-head .alert-util li a.on{font-weight: 700; color: #009BE0; border-color: #4464A6;}
+.alert .alert-list-wrap{margin-top: 20px;}
+.alert .alert-list-wrap .alert-list{ display:none; padding: 33px 25px 33px 25px; border: 1px solid black; border-radius: 20px; margin-top: 20px;}
+
+#tab-con-1{display: block;}
+#tab-con-2{}
+#tab-con-3{}
+
+.alert .alert-list-wrap .alert-list ul { display: flex; gap: 48px; justify-content: space-between; flex-direction: column; }
+.alert .alert-list-wrap .alert-list ul li a::after{display: block; content: ""; clear: both;}
+.alert .alert-list-wrap .alert-list ul li a dl{float: left; font-family: 'IBM Plex Sans KR Regular'; font-size: 24px;}
+.alert .alert-list-wrap .alert-list ul li a dl:hover{color: #1B51A5; font-weight: 600;}
+.alert .alert-list-wrap .alert-list ul li a dt{float: right; font-family: 'IBM Plex Sans KR Regular'; font-size: 24px;}
+
+
+.info .info-head{display: flex; justify-content: space-between;}
+.info .info-head p { font-size: 48px; font-family: 'Hakgyoansim Byeoljari TTF B'; white-space: nowrap; display: inline-block; }
+.info .info-head .info-util{display: flex; align-items: center; gap: 17px; justify-content: space-between;}
+.info .info-head .info-util img{width: 30px; height: 30px;}
+.info .info-head .info-util span{font-family: 'IBM Plex Sans KR Bold'; font-size: 20px; color: #1B51A5; white-space: nowrap;}
+.info .line{width: 100%; height: 0.5px; background-color: #000; margin-top: 34px; margin-bottom: 40px;}
+.info .info-btm{display: flex; gap: 132px;} 
+.info .info-btm li{display: flex; flex-direction: column; gap: 27px; text-align: center; align-items: center;}
+.info .info-btm li .circle{width: 132px; height: 132px; border-radius: 66px; background-color: #CFDEF6; transition: all 0.5s ease;}
+.info .info-btm li .circle:hover{background-color: #1B51A5; transform: rotate(360deg);}
+.info .info-btm li .circle img{ margin-top: 26px; }
+.info .info-btm li:nth-child(3) .circle img{ margin-top: 30px; }
+.info .info-btm li p{font-family: 'IBM Plex Sans KR Regular'; font-size: 20px;}
+
+/* =======================================
+푸터 영역 
+=========================================*/
+
+#footer{background-color: #CFDEF6; width: 100%}
+#footer .foot-inner{width: 1440px; margin: 0 auto;}
+#footer .foot-inner .foot-top{font-family: 'IBM Plex Sans KR SemiBold'; font-size: 16px; border-bottom: 5px solid #B0C3D9;}
+#footer .foot-inner .foot-top .foot-link{display: flex; padding-top: 40px; padding-bottom: 30px; gap: 20px; }
+#footer .foot-inner .foot-top .foot-link a{color: #4E4E4E; position: relative;}
+#footer .foot-inner .foot-top .foot-link a:hover{color: #1B51A5;}
+#footer .foot-inner .foot-top .foot-link a:first-child{margin-left: 0;}
+#footer .foot-inner .foot-top .foot-link a:last-child::after{display: none;}
+
+#footer .foot-inner .foot-bottom{display: flex; justify-content: space-between; padding-top: 40px; padding-bottom: 175px;}
+#footer .foot-inner .foot-bottom .foot_info { display: flex; flex-direction: column; gap: 40px; letter-spacing: normal; text-align: right; }
+#footer .foot-inner .foot-bottom .foot_info address{color: 000; font-style: normal;}
+#footer .foot-inner .foot-bottom .foot_info p.copy{color: #4E4E4E;}
+
+/* =======================================
+overlay 부분
+=========================================*/
+
+.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: none; z-index: 100;}

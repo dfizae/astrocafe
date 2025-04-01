@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중미산천문대 :: 수도권에서 가장 많은 별을 볼 수 있는 천문대</title>
+    
+    <!-- 1. 제이쿼리 라이브러리 (이걸 1번) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- 2. swiper 라이브러리 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    
+    <!-- 3. 내가 작성한 css, js 파일 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <script src="js/script.js"></script>
+
+    <!-- 4. xeicon 라이브러리 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xpressengine/xeicon@2.3.3/xeicon.min.css">
+
+
+</head>
+<body>
+    <!-- blur 부분 -->
+    <div class="wrap">
+        <!-- 헤더, gnb 부분 -->
+        <header id="header">
+            <div class="inner">
+                <h1 class="logo">
+                    <a href="#"><img src="images/ico-head_logo.png" alt="헤더로고"></a>
+                </h1>
+                <nav class="gnb-wrap">
+                    <ul id="gnb">
+                        <li class="gnb-list1">
+                            <a href="#" class="dep1">천문대소개</a>
+                            <ul class="dep2">
+                                <li><a href="#">인사말</a></li>
+                                <li><a href="#">시설안내</a></li>
+                                <li><a href="#">오시는길</a></li>
+                            </ul>
+                        </li>
+                        <li class="gnb-list2">
+                            <a href="#" class="dep1">관람</a>
+                            <ul class="dep2">
+                                <li><a href="#">프로그램 안내</a></li>
+                                <li><a href="#">관람예약</a></li>
+                                <li><a href="#">예약확인·취소</a></li>
+                            </ul>
+                        </li>
+                        <li class="gnb-list3">
+                            <a href="#" class="dep1">소식·알림</a>
+                            <ul class="dep2">
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">이달의 관측대상</a></li>
+                                <li><a href="#">재관측 안내</a></li>
+                            </ul>
+                        </li>
+                        <li class="gnb-list4">
+                            <a href="#" class="dep1">커뮤니티</a>
+                            <ul class="dep2 last">
+                                <li><a href="#">자주묻는질문</a></li>
+                                <li><a href="#">온라인문의</a></li>
+                                <li><a href="#">방문후기</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="util-wrap">
+                    <div class="util">  
+                        <div class="id">
+                            <a href="#" class="login">
+                                <div class="icon_user"></div>
+                                <span>로그인</span>
+                            </a>
+                        </div>
+                        <div class="search_wrap">
+                            <form action="#" method="post" class="search">
+                                <label for="search-box"></label>
+                                <input type="text" id="search-box" placeholder="# 오늘 날씨" autocomplete="off">
+                                <button></button>
+                            </form>
+                        </div>
+                        <div class="quick-menu">
+                            <i class="xi-bars xi-3x"></i>
+                            <div class="quick-list-wrap">
+                                <ul class="quick-list">
+                                    <li>
+                                        <a href="#">
+                                            <span class="quick-img">
+                                                <span class="quick-text">오시는 길</span>
+                                                <img src="images/ico-Address.png" alt="아이콘1">
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="quick-img">
+                                                <span class="quick-text">일일 관람 예약</span>
+                                                <img src="images/ico-quick-Event-Accepted.png" alt="아이콘2">
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="quick-img">
+                                                <span class="quick-text">이달의 관측대상</span>
+                                                <img src="images/ico-Rocket.png" alt="아이콘3">
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="quick-img">
+                                                <span class="quick-text">날씨 확인</span>
+                                                <img src="images/ico-Night.png" alt="아이콘4">
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="quick-img">
+                                                <span class="quick-text">단체예약신청</span>
+                                                <img src="images/ico-Batch_Assign.png" alt="아이콘5">
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li style="text-align: right;">
+                                        <input type="button" title="X" class="quick-close">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- 슬라이스 창 부분 -->
+        <div class="main-wrap">
+            <div class="swiper" id="main-slide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/img-main_slide1.png" alt="메인이미지">
+                        <div class="txt-con">
+                            <div class="txt-wrap">
+                                <p class="tit"><strong>중미산천문대</strong></p>
+                                <p class="txt"><em>수도권에서 가장 많은 별을 볼 수 있는 천문대</em></p>
+                            </div>
+                        </div>
+                    </div><!-- // swiper-slide 끝 -->
+                    <div class="swiper-slide">
+                        <img src="images/img-main_slide2.png" alt="메인이미지2">
+                        <div class="txt-con">
+                            <div class="txt-wrap">
+                                <p class="tit"><strong>미지의 우주가 궁금하다면?</strong></p>
+                                <p class="txt"><em>중미산천문대의 망원경으로 미지의 공간을 탐험해보세요!</em></p>
+                            </div>
+                        </div>
+                    </div><!-- // swiper-slide 끝 -->
+                </div> <!-- // swiper-wrapper 끝 -->
+                  <!-- ... 부분 //swiper.js 홈페이지에서 가져온다! -->
+                <div class="swiper-pagination-wrap">
+                    <div class="swiper-button-prev">
+                        <!-- xi-2x는 아이콘을 두배로 늘려주는 기능 -->
+                        <i class="xi-long-arrow-left xi-3x"></i>
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="xi-long-arrow-right xi-3x"></i>
+                    </div>
+                    <div class="swiper-pagination-text">                       
+                        <p><span id="current-slide">1</span> / 2</p>
+                    </div>
+                    <div class="swiper-pagination"></div>   
+                </div>           
+                <!-- 스와이프 버튼 얖옆 화살표 -->                
+            </div> <!-- swiper 끝 -->
+        </div>
+        <!-- 배너 부분 -->
+        <section id="program-wrap">
+            <div class="program-wrap">
+                <h2>프로그램 안내</h2>
+                <a href="#" class="more">
+                    <span>더보기</span>
+                    <img src="images/ico-+.png" alt="+">
+                </a>
+                <ul id="banner-wrap">
+                    <li class="banner-1 banner">
+                        <a href="#" class="banner-link">
+                            <img src="images/img-banner-1.png" alt="첫번째 배너 사진">
+                            <div class="checkin">
+                                <span class="black">접수중</span>
+                                <span class="normal">정원:30명</span>
+                            </div>
+                            <p class="banner-info">원데이|킹덤 별자리 여행</p>
+                            <p class="banner-pri"><strong>18,000</strong> 원</p>
+                            <div class="program-util">
+                                <div class="like">
+                                    <img src="images/ico-heart.png" alt="공감 버튼 이미지">
+                                    <p>843</p>
+                                </div>
+                                <div class="share">
+                                    <img src="images/ico-share.png" alt="공유 버튼 이미지">
+                                </div>
+                            </div>
+                        </a>    
+                    </li>
+                    <li class="banner-2 banner">
+                        <a href="#" class="banner-link">
+                            <img src="images/img-banner-2.png" alt="두번째 배너 사진">
+                            <div class="checkin">
+                                <span class="black">접수중</span>
+                                <span class="normal">정원:50명</span>
+                            </div>
+                            <p class="banner-info">닐 암스트롱 | 단체 프로그램</p>
+                            <p class="banner-pri"><strong>22,000</strong> 원</p>
+                            <div class="program-util">
+                                <div class="like">
+                                    <img src="images/ico-heart.png" alt="공감 버튼 이미지">
+                                    <p>1967</p>
+                                </div>
+                                <div class="share">
+                                    <img src="images/ico-share.png" alt="공유 버튼 이미지">
+                                </div>
+                            </div>
+                        </a>    
+                    </li>
+                    <li class="banner-3 banner">
+                        <a href="#" class="banner-link">
+                            <img src="images/img-banner-3.png" alt="세번째 배너 사진">
+                            <div class="checkin">
+                                <span class="gray">접수마감</span>
+                                <span class="normal">정원:10명</span>
+                            </div>
+                            <p class="banner-info">오은영 | 별자리로 알아보는 궁합</p>
+                            <p class="banner-pri"><strong>35,000</strong> 원</p>
+                            <div class="program-util">
+                                <div class="like">
+                                    <img src="images/ico-heart.png" alt="공감 버튼 이미지">
+                                    <p>2024</p>
+                                </div>
+                                <div class="share">
+                                    <img src="images/ico-share.png" alt="공유 버튼 이미지">
+                                </div>
+                            </div>
+                        </a>    
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- 소식알림, 관람안내 부분 -->
+         <section id="alert-wrap">
+            <div class="alert">
+                <div class="alert-head">
+                    <h2>소식·알림</h2>
+                    <ul class="alert-util">
+                        <li><a href="#" data-tab="#tab-con-1" class="on">공지사항</a></li>
+                        <li><a href="#" data-tab="#tab-con-2">이달의 관측대상</a></li>
+                        <li><a href="#" data-tab="#tab-con-3">재관측 안내</a></li>
+                    </ul>
+                </div>
+                <div class="alert-list-wrap">
+                    <div class="alert-list" id="tab-con-1">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <dl>중미산천문대 관측돔 정상운영안내.</dl>
+                                    <dt>2024.10.24</dt>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <dl>중미산천문대 관측돔 일시휴업안내</dl>
+                                    <dt>2024.10.18</dt>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <dl>중미산천문대 10월 행사예정</dl>
+                                    <dt>2024.10.01</dt>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="alert-list" id="tab-con-2">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <dl>중미산천문대 11월 관측대상</dl>
+                                    <dt>2024.10.29</dt>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <dl>중미산천문대 10월 관측대상</dl>
+                                    <dt>2024.09.29</dt>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <dl>중미산천문대 09월 관측대상</dl>
+                                    <dt>2024.08.29</dt>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="alert-list" id="tab-con-3">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <dl>거문고자리</dl>
+                                    <dt>2024.09.23</dt>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <dl>독수리자리</dl>
+                                    <dt>2024.08.02</dt>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <dl>목동자리</dl>
+                                    <dt>2024.06.21</dt>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-head">
+                    <p>관람안내</p>
+                    <div class="info-util">
+                        <img src="images/ico-headphone.png" alt="스마트콜">
+                        <span>0507-1319-0306 (네이버 스마트콜)</span>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <ul class="info-btm">
+                    <li>
+                        <div class="circle">
+                            <img src="images/ico-clock.png" alt="시계아이콘">     
+                        </div>
+                        <p>월요일 ~ 일요일<br>
+                            08:00 ~ 23:00
+                        </p>
+                    </li>
+                    <li>
+                        <div class="circle">
+                            <img src="images/ico-Event-Accepted.png" alt="이벤트 확인">     
+                        </div>
+                        <p>화요일 휴무일</p>
+                    </li>
+                    <li>
+                        <div class="circle">
+                            <img src="images/ico-map-pin.png" alt="네비게이션">     
+                        </div>
+                        <p>경기도 양평군<br>
+                            옥천면 중미산로<br>
+                            1248</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- 푸터 부분  -->
+        <footer id="footer">
+            <div class="foot-inner">
+                <div class="foot-top">
+                    <div class="foot-link">
+                        <a href="#">천문대 소개</a>
+                        <a href="#">이용약관</a>
+                        <a href="#">개인정보처리방침</a>
+                        <a href="#">이메일무단수집거부</a>
+                    </div>
+                </div>
+                <div class="foot-bottom">
+                    <a href="#" class="foot-logo"><img src="images/img-foot_logo.png" alt="중미산천문대"></a>
+                    <div class="foot_info">
+                        <address>
+                            경기도 양평군 옥천면 중미산로 1268
+                            <br>문의전화: 0507-1319-0306(네이버 스마트콜)|이메일:jungmiastro@naver.com
+                        </address>
+                        <p class="copy">
+                            COPYRIGHT &copy; 2024 ASTRPCAFE.KR ALL RIGHT RESERVES.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="overlay"></div>
+</body>
+</html>
